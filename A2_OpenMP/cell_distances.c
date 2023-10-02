@@ -107,7 +107,7 @@ if (file == NULL)
 printf("error opening file\n");
 return -1;
 }
-
+/* ??? */
 fseek(file, start*lsz, 0); 
 fread (lines, sizeof(char), size*lsz, file); 
 fclose(file);
