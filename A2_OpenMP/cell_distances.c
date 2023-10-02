@@ -4,7 +4,7 @@
 #include <math.h>
 #include <omp.h>
 
-//initially derfine blocks
+//initially define blocks
 #define total_blocks 2
 static int file_each;
 int parrel_n = 4;
@@ -114,15 +114,17 @@ fclose(file);
 for (int ix = 0; ix < size; ++ix)
 {
 int lskip = ix*lsz; 
-pos[0] = (44-lines[0 + lskip]) * ((lines[ 1 + lskip]-48)*10000+ (lines[ 2 + lskip]-48)*1000
-           + (lines[ 4 + lskip]-48)*100
-           + (lines[ 5 + lskip]-48)*10
-           + (lines[ 6 + lskip]-48)*1
+pos[0] = (44-lines[0 + lskip]) * ((lines[ 1 + lskip]-48)*10000 
+         + (lines[ 2 + lskip]-48)*1000
+         + (lines[ 4 + lskip]-48)*100
+         + (lines[ 5 + lskip]-48)*10
+         + (lines[ 6 + lskip]-48)*1
 );
-pos[1] = (44-lines[8 + lskip]) * ((lines[9 + lskip]-48)*10000+(lines[10+lskip]-48)*1000
-           + (lines[12 + lskip]-48)*100
-           + (lines[13 + lskip]-48)*10
-           + (lines[14 + lskip]-48)*1
+pos[1] = (44-lines[8 + lskip]) * ((lines[9 + lskip]-48)*10000
+         +(lines[10+lskip]-48)*1000
+         + (lines[12 + lskip]-48)*100
+         + (lines[13 + lskip]-48)*10
+         + (lines[14 + lskip]-48)*1
 );
 pos[2] = (44-lines[16 + lskip]) * ((lines[17 + lskip]-48)*10000
            + (lines[18 + lskip]-48)*1000
