@@ -4,18 +4,18 @@ int
 main()
 {
   FILE *f = fopen("cells", "r");
-if ( f == NULL )
+  if ( f == NULL )
   return 1;
 
-const int sz = 100000;
+  const int sz = 100000;
 
-for( int bench = 0; bench < 50; ++bench ){
-for ( int ix = 0; ix < sz; ++ix){
-float x, y, z;
-fscanf(f, "%f %f %f", &x, &y, &z);
-}
-}
+  for( int bench = 0; bench < 50; ++bench ){
+    for ( int ix = 0; ix < sz; ++ix){
+    float x, y, z;
+    fscanf(f, "%f %f %f", &x, &y, &z);
+    }
+  }
 fclose(f);
 
 return 0
-  }
+}
