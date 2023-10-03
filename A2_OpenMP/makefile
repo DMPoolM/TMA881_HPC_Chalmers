@@ -1,3 +1,4 @@
+GFLAGS = -O2
 .PHONY all
 
 all: fscanf sscanf sscanf_mem
