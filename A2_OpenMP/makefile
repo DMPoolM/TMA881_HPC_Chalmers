@@ -10,3 +10,8 @@ sscanf: sscanf.c
         gcc $(CFLAGS) -o $@ $<
 sscanf_mem: sscanf_mem.c
         gcc $(CFLAGS) -o $@ $<
+atof: atof.c
+        gcc $(CFLAGS) -o $@ $<
+char: char.c
+        gcc $(CFLAGS) -o $@ $<
+
