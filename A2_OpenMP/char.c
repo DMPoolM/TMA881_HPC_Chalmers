@@ -13,9 +13,8 @@ parse_coord(
       (s[6] - '0') * 0.001f;
   if (s[0] == '-'){
         return -x;
-    else{
+    }else{
       return x;
-    }
   }
   
 }
