@@ -1,6 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+float 
+parse_coord(
+  char *s)
+{
+  float x;
+  x = (s[1] - '0') * 10.f +
+      (s[2] - '0') +
+      (s[4] - '0') * 0.1f +
+      (s[5] - '0') * 0.01f +
+      (s[6] - '0') * 0.001f;
+  if (s[0] == '-'){
+        return -x;
+    else{
+      return x;
+    }
+  }
+  
+}
+
+
 int
 main()
 {
