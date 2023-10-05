@@ -77,9 +77,7 @@ int main(int argc, char *argv[])
     if(rowCount % MaxRowsLoad) //Number of blocks needed. Tells whether the last contains fewer rows than the rest, and if it is it adds an additional block
     {
         numOfBlocksNeeded = rowCount/MaxRowsLoad + 1;
-    }
-    else
-    {
+    }else {
         numOfBlocksNeeded = rowCount/MaxRowsLoad;
     }
 
@@ -92,9 +90,7 @@ int main(int argc, char *argv[])
         {
             numOfRowsInBlock[i] = MaxRowsLoad;
             MaxRowsInBlock -= MaxRowsLoad;
-        }
-        else
-        {
+        }else {
             numOfRowsInBlock[i] = MaxRowsInBlock;
         }
         firstBlock[i] = i * MaxRowsLoad;
@@ -106,7 +102,6 @@ int main(int argc, char *argv[])
         size_t CurrentBlockLoad = numOfRowsInBlock[i]; 
         float *blockEntries = (float*)malloc(sizeof(float) * CurrentBlockLoad * colSize);
         float **block = (float**)malloc(sizeof(float*) * CurrentBlockLoad);
-
         
         for(size_t j = 0; j < CurrentBlockLoad; j++)
         {
@@ -123,7 +118,6 @@ int main(int argc, char *argv[])
             block[ix][0] = atof(stringLine);
             block[ix][1] = atof(stringLine + 8);
             block[ix][2] = atof(stringLine + 16);
-            
         }
         
         //Calculate distances within a block
