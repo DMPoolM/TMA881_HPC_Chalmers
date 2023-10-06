@@ -28,7 +28,7 @@ static inline void distancesWithinBlock(size_t CurrentBlockLoad, float** block)
             InnerProduct = (CurrentCoordinates[0] - block[j][0])*(CurrentCoordinates[0] - block[j][0]) +
             (CurrentCoordinates[1] - block[j][1]) * (CurrentCoordinates[1] - block[j][1]) +
             (CurrentCoordinates[2] - block[j][2]) * (CurrentCoordinates[2] - block[j][2]);
-            TotalDistance = (int)(100*sqrtf(innerProduct));
+            TotalDistance = (int)(100*sqrtf(InnerProduct));
             
             count[TotalDistance] += 1;
             
@@ -100,12 +100,12 @@ int main(int argc, char *argv[])
     for(size_t i = 0; i < numOfBlocksNeeded; ++i) // Set parameters through for loop, prepare for run the functions
     {
         size_t CurrentBlockLoad = numOfRowsInBlock[i]; 
-        float *blockEntries = (float*)malloc(sizeof(float) * CurrentBlockLoad * colSize);
+        float *blockEntries = (float*)malloc(sizeof(float) * CurrentBlockLoad * ColSize);
         float **block = (float**)malloc(sizeof(float*) * CurrentBlockLoad);
         
         for(size_t j = 0; j < CurrentBlockLoad; j++)
         {
-            block[j] = blockEntries + j * colSize;
+            block[j] = blockEntries + j * ColSize;
         }
 
         fseek(file, firstBlock[i] * 24L, SEEK_SET);
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
                 size_t PreviousBlockStart = firstBlock[ix];
                 size_t PreviousBlockRow = numOfRowsInBlock[ix];
                 fseek(file, PreviousBlockStart * 24L, SEEK_SET);
-                float PreviousBlockValues[colSize];
+                float PreviousBlockValues[ColSize];
                 char stringLine[25];
                 for(size_t jx = 0; jx < PreviousBlockRow; ++jx)
                 {
