@@ -26,7 +26,7 @@ void computeIteration(double complex coordinates, char *attractor, char *converg
         if (creal(coordinates) * creal(coordinates) + cimag(coordinates) * cimag(coordinates) < tolerance * tolerance ||
             fabs(creal(coordinates)) > maxIter || fabs(cimag(coordinates)) > maxIter)
         {
-            *attractor = 9;  // Mark as converged to the origin or diverged
+            *attractor = 9;  // Mark as converged to the origin or diverged to the origin
             break;
         }
 
